@@ -105,15 +105,15 @@ disp('this step because they are already linear.');
 str_cur = pwd();
 try
     cd([str_cur, '/source_code/IO/']);
-    mex('read_exr.cpp');
-    mex('write_exr.cpp');
+    mex('--std=c++11', 'read_exr.cpp');
+    mex('--std=c++11', 'write_exr.cpp');
 catch err    
     disp('read_exr.cpp and write_exr.cpp were not compiled');
 end
 
 try
     cd([str_cur, '/source_code/util/']);
-    mex('bilateralFilterS.cpp');
+    mex('--std=c++11', 'bilateralFilterS.cpp');
 catch err
     disp('bilateralFilterS.cpp was not compiled');
 end
